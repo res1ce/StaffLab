@@ -22,6 +22,7 @@ namespace sotrudniki
     public partial class MainWindow : Window
     {
         public static int IdRole { get; set; }
+        public static int IdEmployee { get; set; }
         public MainWindow()
         {
             InitializeComponent();

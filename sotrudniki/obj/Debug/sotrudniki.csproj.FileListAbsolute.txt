@@ -38,3 +38,5 @@ C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\sotrudniki.exe
 C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\sotrudniki.pdb
 C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\View\WindowNewRole.g.cs
 C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\View\WindowNewRole.baml
+C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\View\WindowNewEmployee.g.cs
+C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\View\WindowNewEmployee.baml
