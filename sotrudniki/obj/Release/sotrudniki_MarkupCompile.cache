@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\
+C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Release\
 sotrudniki
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\у\Desktop\project\StaffLab\sotrudniki\App.xaml
 3-368639367
 
-14-1341890919
+112035617303
 13-1310406943
 MainWindow.xaml;View\WindowEmployee.xaml;View\WindowRole.xaml;
 
-False
+True
 

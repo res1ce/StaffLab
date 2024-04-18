@@ -6,11 +6,20 @@
         xmlns:local="clr-namespace:sotrudniki.View"
         mc:Ignorable="d"
         Title="Должности" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <Label Content="Должности" Grid.Row="0" Margin="100 0 0 0" FontSize="20" Foreground="#FF868383"/>
-    </Grid>
-</Window>
+    <StackPanel Background="#FFD8D8D8">
+        <Label Margin="5" HorizontalAlignment="Center">Список должностей 
+сотрудников</Label>
+        <ListView x:Name="lvRole" Background="#FFD3CDCD">
+            <ListView.View >
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" Width="50" 
+ DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Наименование должности" 
+ DisplayMemberBinding="{Binding NameRole}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>

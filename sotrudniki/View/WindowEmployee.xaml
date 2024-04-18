@@ -6,11 +6,19 @@
         xmlns:local="clr-namespace:sotrudniki.View"
         mc:Ignorable="d"
         Title="Сотрудники" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <Label Content="Сотрудники" Grid.Row="0" Margin="100 0 0 0" FontSize="20" Foreground="#FF868383"/>
-    </Grid>
+    <StackPanel>
+        <ListView x:Name="lvEmployee">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" Width="50" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Role}"/>
+                        <GridViewColumn Header="Дата рождения" DisplayMemberBinding="{Binding Birthday, StringFormat={}{0:dd\.}{0:MM\.}{0:yyyy}}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
 </Window>
