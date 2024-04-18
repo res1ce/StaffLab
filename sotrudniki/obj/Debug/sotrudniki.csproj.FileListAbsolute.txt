@@ -36,3 +36,5 @@ C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\sotrudniki.csproj.Gene
 C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\sotrudniki.csproj.CoreCompileInputs.cache
 C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\sotrudniki.exe
 C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\sotrudniki.pdb
+C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\View\WindowNewRole.g.cs
+C:\Users\у\Desktop\project\StaffLab\sotrudniki\obj\Debug\View\WindowNewRole.baml
