@@ -1,32 +1,76 @@
 ﻿using sotrudniki.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace sotrudniki.Model
 {
-    public class PersonDPO
+    public class PersonDpo : INotifyPropertyChanged
     {
         public int Id { get; set; }
-        public string Role { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime Birthday { get; set; }
-        public PersonDPO() { }
-        public PersonDPO(int id, string role, string firstName, string
-       lastName, DateTime birthday)
+        private string _roleName;
+        public string RoleName
+        {
+            get { return _roleName; }
+            set
+            {
+                _roleName = value;
+                OnPropertyChanged("RoleName");
+            }
+        }
+        private string firstName;
+        public string FirstName
+        {
+            get { return firstName; }
+            set
+            {
+                firstName = value;
+                OnPropertyChanged("FirstName");
+            }
+        }
+        private string lastName;
+        public string LastName
+        {
+            get { return lastName; }
+            set
+            {
+                lastName = value;
+                OnPropertyChanged("LastName");
+            }
+        }
+        private DateTime birthday;
+        public DateTime Birthday
+        {
+            get { return birthday; }
+            set
+            {
+                birthday = value;
+                OnPropertyChanged("Birthday");
+            }
+        }
+
+        public PersonDpo() { }
+        public PersonDpo(int id, string roleName, string firstName, string lastName, DateTime birthday)
         {
             this.Id = id;
-            this.Role = role;
+            this.RoleName = roleName;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Birthday = birthday;
         }
-        public PersonDPO CopyFromPerson(Person person)
+
+        public PersonDpo ShallowCopy()
         {
-            PersonDPO perDPO = new PersonDPO();
+            return (PersonDpo)this.MemberwiseClone();
+        }
+
+        public PersonDpo CopyFromPerson(Person person)
+        {
+            PersonDpo perDpo = new PersonDpo();
             RoleViewModel vmRole = new RoleViewModel();
             string role = string.Empty;
             foreach (var r in vmRole.ListRole)
@@ -39,18 +83,18 @@ namespace sotrudniki.Model
             }
             if (role != string.Empty)
             {
-                perDPO.Id = person.Id;
-                perDPO.Role = role;
-                perDPO.FirstName = person.FirstName;
-                perDPO.LastName = person.LastName;
-                perDPO.Birthday = person.Birthday;
+                perDpo.Id = person.Id;
+                perDpo.RoleName = role;
+                perDpo.FirstName = person.FirstName;
+                perDpo.LastName = person.LastName;
+                perDpo.Birthday = person.Birthday;
             }
-            return perDPO;
+            return perDpo;
         }
-        public PersonDPO ShallowCopy()
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            return (PersonDPO)this.MemberwiseClone();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }

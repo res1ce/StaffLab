@@ -57,7 +57,8 @@
     </ApplicationDefinition>
     <Compile Include="Helper\FindPerson.cs" />
     <Compile Include="Helper\FindRole.cs" />
-    <Compile Include="Model\PersonDPO.cs" />
+    <Compile Include="Helper\RelayCommand.cs" />
+    <Compile Include="Model\PersonDpo.cs" />
     <Compile Include="ViewModel\PersonViewModel.cs" />
     <Compile Include="ViewModel\RoleViewModel.cs" />
     <Compile Include="View\WindowEmployee.xaml.cs">
