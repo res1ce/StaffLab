@@ -22,19 +22,19 @@ namespace sotrudniki.View
     /// </summary>
     public partial class WindowRole : Window
     {
-        RoleViewModel RVM;
+        RoleViewModel vmRole;
         public WindowRole()
         {
             InitializeComponent();
-            RVM = new RoleViewModel();
-            DataContext = RVM;
+            vmRole = new RoleViewModel();
+            DataContext = vmRole;
         }
 
         private void RoleListView_Select(object sender, SelectionChangedEventArgs e)
         {
             if (LvRole.SelectedItem != null)
             {
-                RVM.SelectedRole = (Role)LvRole.SelectedItem;
+                vmRole.SelectedRole = (Role)LvRole.SelectedItem;
             }
         }
     }

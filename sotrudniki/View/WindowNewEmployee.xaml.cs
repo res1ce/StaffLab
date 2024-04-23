@@ -1,5 +1,8 @@
-﻿using System;
+﻿using sotrudniki.Model;
+using sotrudniki.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,10 +25,16 @@ namespace sotrudniki.View
         public WindowNewEmployee()
         {
             InitializeComponent();
+            CbRole.ItemsSource = new RoleViewModel().ListRole;
         }
 
         private void BtSave_Click(object sender, RoutedEventArgs e)
         {
+            if(CbRole.SelectedItem == null)
+            {
+                MessageBox.Show("Нужно выбрать роль!", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             DialogResult = true;
         }
     }

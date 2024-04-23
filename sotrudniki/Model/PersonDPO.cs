@@ -52,7 +52,6 @@ namespace sotrudniki.Model
                 OnPropertyChanged("Birthday");
             }
         }
-
         public PersonDpo() { }
         public PersonDpo(int id, string roleName, string firstName, string lastName, DateTime birthday)
         {
@@ -62,7 +61,6 @@ namespace sotrudniki.Model
             this.LastName = lastName;
             this.Birthday = birthday;
         }
-
         public PersonDpo ShallowCopy()
         {
             return (PersonDpo)this.MemberwiseClone();

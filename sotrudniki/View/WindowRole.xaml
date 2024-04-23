@@ -8,9 +8,9 @@
         Title="Должности" Height="300" Width="300">
     <StackPanel Background="#FFD8D8D8">
         <StackPanel Orientation="Horizontal" Background="#FFE4E0E0">
-            <Button x:Name="btnAdd" Margin="10,10,5,10" Content="Добавить" Height="25" Command="{Binding AddRole}"/>
-            <Button x:Name="btnEdit" Margin="10,10,5,10" Content="Редактировать" Height="25" Command="{Binding EditRole}"/>
-            <Button x:Name="btnDelete" Margin="10,10,5,10" Content="Удалить" Height="25" Command="{Binding DeleteRole}"/>
+            <Button x:Name="btnAdd" Style="{StaticResource ButtonMenu}" Content="Добавить" Command="{Binding AddRole}"/>
+            <Button x:Name="btnEdit" Style="{StaticResource ButtonMenu}" Content="Редактировать" Command="{Binding EditRole}"/>
+            <Button x:Name="btnDelete" Style="{StaticResource ButtonMenu}" Content="Удалить" Command="{Binding DeleteRole}"/>
         </StackPanel>
         <Label Margin="5" HorizontalAlignment="Center">Список должностей сотрудников</Label>
         <ListView Name="LvRole" Background="#FFD3CDCD" ItemsSource="{Binding ListRole}" SelectionChanged="RoleListView_Select">

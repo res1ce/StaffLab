@@ -27,6 +27,11 @@ namespace sotrudniki.View
 
         private void BtSave_Click(object sender, RoutedEventArgs e)
         {
+            if (TbRole.Text == "")
+            {
+                MessageBox.Show("Нужно выбрать роль!", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             DialogResult = true;
         }
     }

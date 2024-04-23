@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:sotrudniki.View"
         mc:Ignorable="d"
-        Title="WindowNewEmployee" Height="450" Width="800">
+        Title="WindowNewEmployee" Height="270" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
@@ -43,4 +43,5 @@ Width="130" Margin="5,8,0,7"/>
             <Button x:Name="BtCansel" Content="Отменить" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,10,10,5" IsCancel="True"/>
         </StackPanel>
     </Grid>
-</Window>
+</Window>
+

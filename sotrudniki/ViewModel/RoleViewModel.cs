@@ -79,6 +79,7 @@ namespace sotrudniki.ViewModel
                     };
                     // формирование кода новой должности
                     int maxIdRole = MaxId() + 1;
+
                     Role role = new Role { Id = maxIdRole };
                     wnRole.DataContext = role;
                     if (wnRole.ShowDialog() == true)

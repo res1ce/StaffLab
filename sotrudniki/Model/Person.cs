@@ -28,14 +28,14 @@ namespace sotrudniki.Model
         {
             RoleViewModel vmRole = new RoleViewModel();
             int roleId = 0;
-/*            foreach (var r in vmRole.ListRole)
+            foreach (var r in vmRole.ListRole)
             {
-                if (r.NameRole == p.Role)
+                if (r.NameRole == p.RoleName)
                 {
                     roleId = r.Id;
                     break;
                 }
-            }*/
+            }
             if (roleId != 0)
             {
                 this.Id = p.Id;
