@@ -88,3 +88,8 @@ C:\Users\у\Desktop\StaffLab\sotrudniki\obj\Debug\sotrudniki.exe
 C:\Users\у\Desktop\StaffLab\sotrudniki\obj\Debug\sotrudniki.pdb
 C:\Users\у\Desktop\StaffLab\sotrudniki\obj\Debug\DictionaryApp.baml
 C:\Users\у\Desktop\StaffLab\sotrudniki\obj\Debug\App.baml
+C:\Users\warfa\OneDrive\Рабочий стол\lab\StaffLab\sotrudniki\bin\Debug\Newtonsoft.Json.dll
+C:\Users\warfa\OneDrive\Рабочий стол\lab\StaffLab\sotrudniki\bin\Debug\Newtonsoft.Json.xml
+C:\Users\warfa\OneDrive\Рабочий стол\lab\StaffLab\sotrudniki\obj\Debug\DictionaryApp.baml
+C:\Users\warfa\OneDrive\Рабочий стол\lab\StaffLab\sotrudniki\obj\Debug\App.baml
+C:\Users\warfa\OneDrive\Рабочий стол\lab\StaffLab\sotrudniki\obj\Debug\sotrudniki.csproj.CopyComplete

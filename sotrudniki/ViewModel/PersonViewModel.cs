@@ -1,10 +1,12 @@
-﻿using sotrudniki.Helper;
+﻿using Newtonsoft.Json;
+using sotrudniki.Helper;
 using sotrudniki.Model;
 using sotrudniki.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -15,6 +17,38 @@ namespace sotrudniki.ViewModel
 {
     public class PersonViewModel
     {
+        readonly string path = @"C:\Users\warfa\DataModels\PersonData.json";
+        string _jsonPersons = String.Empty;
+        public string Error { get; set; }
+        public ObservableCollection<Person> LoadPerson()
+        {
+            _jsonPersons = File.ReadAllText(path);
+            if (_jsonPersons != null)
+            {
+                ListPerson = JsonConvert.DeserializeObject<ObservableCollection<Person>>(_jsonPersons);
+                return ListPerson;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        private void SaveChanges(ObservableCollection<Person> listPersons)
+        {
+            var jsonPerson = JsonConvert.SerializeObject(listPersons);
+            try
+            {
+                using (StreamWriter writer = File.CreateText(path))
+                {
+                    writer.Write(jsonPerson);
+                }
+            }
+            catch (IOException e)
+            {
+                Error = "Ошибка записи json файла /n" + e.Message;
+            }
+        }
+
         private PersonDpo selectedPersonDpo;
         public PersonDpo SelectedPersonDpo
         {
@@ -27,7 +61,11 @@ namespace sotrudniki.ViewModel
             }
         }
         public ObservableCollection<Person> ListPerson { get; set; } = new ObservableCollection<Person>();
-        public ObservableCollection<PersonDpo> ListPersonDpo { get; set; } = new ObservableCollection<PersonDpo>();
+        public ObservableCollection<PersonDpo> ListPersonDpo
+        {
+            get;
+            set;
+        } = new ObservableCollection<PersonDpo>();
         public PersonViewModel()
         {
             this.ListPerson.Add(
@@ -118,6 +156,7 @@ namespace sotrudniki.ViewModel
                         Person p = new Person();
                         p = p.CopyFromPersonDPO(per);
                         ListPerson.Add(p);
+                        SaveChanges(ListPerson);
                     }
                 }, (obj) => true));
             }
@@ -156,6 +195,7 @@ namespace sotrudniki.ViewModel
                             List<Person> listPerson = ListPerson.ToList();
                             Person p = listPerson.Find(new Predicate<Person>(finder.PersonPredicate));
                             p = p.CopyFromPersonDPO(personDpo);
+                            SaveChanges(ListPerson);
                         }
                     }
                     catch { }
@@ -179,6 +219,7 @@ namespace sotrudniki.ViewModel
                         Person per = new Person();
                         per = per.CopyFromPersonDPO(person);
                         ListPerson.Remove(per);
+                        SaveChanges(ListPerson);
                     }
                 }, (obj) => SelectedPersonDpo != null && ListPersonDpo.Count > 0));
             }
