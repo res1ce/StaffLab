@@ -18,7 +18,7 @@ namespace sotrudniki.ViewModel
 {
     public class RoleViewModel : INotifyPropertyChanged
     {
-        readonly string path = @"C:\Users\warfa\DataModels\RoleData.json";
+        readonly string path = @"C:\123\RoleData.json";
         public ObservableCollection<Role> ListRole { get; set; } = new ObservableCollection<Role>();
         private Role _selectedRole;
         public Role SelectedRole
@@ -118,6 +118,7 @@ namespace sotrudniki.ViewModel
                     if (result == MessageBoxResult.OK)
                     {
                         ListRole.Remove(role);
+                        _selectedRole = null;
                         SaveChanges(ListRole);
                     }
                 }, (obj) => SelectedRole != null && ListRole.Count > 0));

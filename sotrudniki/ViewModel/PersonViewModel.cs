@@ -17,7 +17,7 @@ namespace sotrudniki.ViewModel
 {
     public class PersonViewModel
     {
-        readonly string path = @"C:\Users\warfa\DataModels\PersonData.json";
+        readonly string path = @"C:\123\PersonData.json";
         string _jsonPersons = String.Empty;
         public string Error { get; set; }
         public ObservableCollection<Person> LoadPerson()
@@ -219,6 +219,7 @@ namespace sotrudniki.ViewModel
                         Person per = new Person();
                         per = per.CopyFromPersonDPO(person);
                         ListPerson.Remove(per);
+                        selectedPersonDpo = null;
                         SaveChanges(ListPerson);
                     }
                 }, (obj) => SelectedPersonDpo != null && ListPersonDpo.Count > 0));
