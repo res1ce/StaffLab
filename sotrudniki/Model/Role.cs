@@ -11,22 +11,12 @@ namespace sotrudniki.Model
     public class Role : INotifyPropertyChanged
     {
         public int Id { get; set; }
-        private string nameRole;
-        public string NameRole
+        public string NameRole { get; set; }
+        public Role()
         {
-            get { return nameRole; }
-            set
-            {
-                nameRole = value;
-                OnPropertyChanged("NameRole");
-            }
+            this.Persons = new HashSet<Person>();
         }
-        public Role() { }
-        public Role(int id, string nameRole)
-        {
-            this.Id = id;
-            this.NameRole = nameRole;
-        }
+        public virtual ICollection<Person> Persons { get; set; }
         public Role ShallowCopy()
         {
             return (Role)this.MemberwiseClone();
